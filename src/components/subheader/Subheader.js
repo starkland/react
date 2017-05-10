@@ -1,6 +1,9 @@
 // React
 import React, { Component } from 'react';
 
+// Assets
+import '../../css/Form.css';
+
 class Subheader extends Component {
 	render() {
 		return(
