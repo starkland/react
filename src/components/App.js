@@ -6,6 +6,7 @@ import Header from './header/Header';
 import Subheader from './subheader/Subheader';
 import Form from './form/Form';
 import Alert from './alert/Alert';
+import Footer from './footer/Footer';
 
 // Assets
 import '../css/App.css';
@@ -26,6 +27,8 @@ class App extends Component {
 
 	      	<Alert message={message} />
 	      </div>
+
+	      <Footer />
 
     	</div>
     );
