@@ -1,27 +1,25 @@
 // React
 import React, { Component } from 'react';
 
+// Components
+import Header from './header/Header';
+import Subheader from './subheader/Subheader';
+
 // Assets
-import logo from '../images/logo.svg';
 import '../css/App.css';
 
 class App extends Component {
   render() {
+  	let subtitle = `Search by user or repository.`;
+
     return (
-      <div className="App">
-        <div className="App-header">
-          <img
-            src={logo}
-            className="App-logo"
-            alt="logo" />
+    	<div>
+	      <Header />
 
-          <h2>Welcome to React</h2>
-        </div>
-
-        <p className="App-intro">
-          To get started, edit `src/App.js` and save to reload.
-        </p>
-      </div>
+	      <Subheader
+	      	title="Home"
+	      	subtitle={subtitle} />
+    	</div>
     );
   }
 }
