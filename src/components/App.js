@@ -7,6 +7,7 @@ import Subheader from './subheader/Subheader';
 import Form from './form/Form';
 import Alert from './alert/Alert';
 import Footer from './footer/Footer';
+import Table from './table/Table';
 
 // Assets
 import '../css/App.css';
@@ -26,10 +27,11 @@ class App extends Component {
 	      	<Form />
 
 	      	<Alert message={message} />
+
+	      	<Table type="users" />
 	      </div>
 
 	      <Footer />
-
     	</div>
     );
   }
