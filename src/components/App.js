@@ -21,9 +21,12 @@ class App extends Component {
 
 	      <Subheader title="Home" subtitle={subtitle} />
 
-      	<Form />
+	      <div className="container">
+	      	<Form />
 
-      	<Alert message={message} />
+	      	<Alert message={message} />
+	      </div>
+
     	</div>
     );
   }
