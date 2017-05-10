@@ -6,14 +6,22 @@ class Form extends Component {
 		super(props);
 
 		this.state = {
-			input: ''
+			input: '',
+			select: 'users'
 		};
 
+		this.handleSelect = this.handleSelect.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+		this.handleInput = this.handleInput.bind(this);
 	}
 
-	handleChange(evt) {
+	handleSelect(evt) {
+		this.setState({
+			select: evt.target.value
+		})
+	}
+
+	handleInput(evt) {
 		this.setState({
 			input: evt.target.value
 		});
@@ -29,12 +37,11 @@ class Form extends Component {
 			<form onSubmit={this.handleSubmit}>
 				<div className="field">
 				  <label className="label">Search by:</label>
-
 				  <p className="control">
 				    <span className="select">
-				      <select>
-				        <option>User</option>
-				        <option>Repositories</option>
+				      <select onChange={this.handleSelect} value={this.state.select}>
+				        <option value="users">User</option>
+				        <option value="repositories">Repositories</option>
 				      </select>
 				    </span>
 				  </p>
@@ -47,7 +54,7 @@ class Form extends Component {
 				    	className="input"
 				    	type="text"
 				    	value={this.state.input}
-				    	onChange={this.handleChange}
+				    	onChange={this.handleInput}
 				    	placeholder="Search here" />
 				  </p>
 				</div>
