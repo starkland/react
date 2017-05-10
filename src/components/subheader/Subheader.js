@@ -2,10 +2,6 @@
 import React, { Component } from 'react';
 
 class Subheader extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
-
 	render() {
 		return(
 			<section className="hero is-medium is-primary is-bold">
