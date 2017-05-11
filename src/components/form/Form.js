@@ -33,6 +33,10 @@ class Form extends Component {
 			this.setState({
 				alertMsg: 'Digite ao menos um termo para pesquisar.'
 			});
+		} else {
+			this.setState({
+				alertMsg: ''
+			});
 		}
 
 		console.warn('Os dados foram:', this.state);
