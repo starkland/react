@@ -8,7 +8,7 @@ class Table extends Component {
 	constructor(props) {
 		super(props);
 
-		console.warn(this.props);
+		// console.warn(this.props);
 	}
 
 	render() {

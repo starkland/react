@@ -12,10 +12,23 @@ import Table from './table/Table';
 import '../css/App.css';
 import Store from '../stores';
 
-
 class App extends Component {
-	_handleChange(obj) {
-		console.warn('Terminei aqui..', obj);
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			formulario: ''
+		};
+
+		this._handleChange = this._handleChange.bind(this);
+	}
+
+	_handleChange() {
+		this.setState({
+			formulario: Store.getFormData()
+		});
+
+		console.warn(this.state.formulario);
 	}
 
 	componentDidMount() {
@@ -23,7 +36,7 @@ class App extends Component {
 	}
 
 	componentWillUnmount() {
-		Store.removeChangeListener(this._handleChange)
+		Store.removeChangeListener(this._handleChange);
 	}
 
   render() {

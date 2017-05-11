@@ -4,8 +4,17 @@ import { EventEmitter } from 'events';
 // Assets
 import AppDispatcher from '../dispatcher';
 
+let _formObj = {};
+
+function _addItem(obj) {
+	return _formObj = obj;
+}
 
 class StoreFactory extends EventEmitter {
+	getFormData() {
+		return _formObj;
+	}
+
 	emitChange() {
 		this.emit('change');
 	}
@@ -26,7 +35,8 @@ AppDispatcher.register(function(payload) {
 
 	switch(action.actionType) {
 		case 'SUBMIT_FORM':
-			console.warn('Bateu aqui pai:', action.data);
+			_addItem(action.data);
+			// console.warn('Bateu aqui pai:', action.data);
 		break;
 
 		default:
