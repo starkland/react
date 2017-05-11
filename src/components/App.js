@@ -27,8 +27,6 @@ class App extends Component {
 		this.setState({
 			formulario: Store.getFormData()
 		});
-
-		console.warn(this.state.formulario);
 	}
 
 	componentDidMount() {
@@ -47,6 +45,8 @@ class App extends Component {
 	      <Header />
 
 	      <Subheader title="Home" subtitle={subtitle} />
+
+	      {this.state.formulario.input}
 
 	      <div className="container">
 	      	<Form />

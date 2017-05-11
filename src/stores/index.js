@@ -36,7 +36,6 @@ AppDispatcher.register(function(payload) {
 	switch(action.actionType) {
 		case 'SUBMIT_FORM':
 			_addItem(action.data);
-			// console.warn('Bateu aqui pai:', action.data);
 		break;
 
 		default:
