@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import Header from './header/Header';
 import Subheader from './subheader/Subheader';
 import Form from './form/Form';
-import Alert from './alert/Alert';
 import Footer from './footer/Footer';
+import Table from './table/Table';
 
 // Assets
 import '../css/App.css';
@@ -14,7 +14,6 @@ import '../css/App.css';
 class App extends Component {
   render() {
   	let subtitle = `Search by user or repository.`;
-  	let message = `O campo search deve ser preenchido.`;
 
     return (
     	<div>
@@ -25,11 +24,10 @@ class App extends Component {
 	      <div className="container">
 	      	<Form />
 
-	      	<Alert message={message} />
+	      	<Table type="users" />
 	      </div>
 
 	      <Footer />
-
     	</div>
     );
   }
