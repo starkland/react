@@ -6,7 +6,7 @@ import Header from './header/Header';
 import Subheader from './subheader/Subheader';
 import Form from './form/Form';
 import Footer from './footer/Footer';
-// import Table from './table/Table';
+import Table from './table/Table';
 
 // Assets
 import '../css/App.css';
@@ -24,7 +24,7 @@ class App extends Component {
 	      <div className="container">
 	      	<Form />
 
-
+	      	<Table type="users" />
 	      </div>
 
 	      <Footer />
