@@ -1,5 +1,6 @@
 // React
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Assets
 const reactLogo = 'http://reactjs.cn/react/img/logo.svg';
@@ -52,7 +53,8 @@ class Header extends React.Component {
 
 				<div
 					className={`nav-right nav-menu ${this.state.isActive ? 'is-active': ''}`}>
-					<a className="nav-item">Home</a>
+					<Link className="nav-item" to="/">Home</Link>
+					<Link className="nav-item" to="about">About</Link>
 				</div>
 			</nav>
 		);

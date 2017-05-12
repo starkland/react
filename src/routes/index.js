@@ -9,6 +9,7 @@ import {
 // Components
 import App from '../components/App';
 import Form from '../components/form/Form';
+import NotFound from '../views/notfound/NotFound';
 
 class Routes extends React.Component {
 	render() {
@@ -16,12 +17,17 @@ class Routes extends React.Component {
 			<Router>
 		  	<div>
 			    <Route
+			        exact
 			        component={App}
 			        path="/"
 			    />
 			    <Route
 			        component={Form}
 			        path="/about"
+			    />
+			    <Route
+			        component={NotFound}
+			        path="*"
 			    />
 		  	</div>
 			</Router>
