@@ -6,7 +6,8 @@
 	color: #FFFFFF;
 }
 
-.nav-right a:hover {
-	background-color: #FFFFFF;
-	color: #363636;
+.nav-right a:hover,
+.nav a.is-active {
+	background-color: #FFFFFF !important;
+	color: #363636 !important;
 }

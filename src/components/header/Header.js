@@ -1,6 +1,6 @@
 // React
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // Assets
 const reactLogo = 'http://reactjs.cn/react/img/logo.svg';
@@ -53,8 +53,19 @@ class Header extends React.Component {
 
 				<div
 					className={`nav-right nav-menu ${this.state.isActive ? 'is-active': ''}`}>
-					<Link className="nav-item" to="/">Home</Link>
-					<Link className="nav-item" to="about">About</Link>
+					<NavLink
+						className="nav-item"
+						activeClassName="is-active"
+						to="/">
+						Home
+					</NavLink>
+
+					<NavLink
+						className="nav-item"
+						activeClassName="is-active"
+						to="about">
+						About
+					</NavLink>
 				</div>
 			</nav>
 		);
