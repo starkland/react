@@ -1,6 +1,9 @@
 // React
 import React, { Component } from 'react';
 
+// Assets
+import Actions from '../../actions';
+
 // Components
 import Alert from '../alert/Alert';
 
@@ -37,9 +40,9 @@ class Form extends Component {
 			this.setState({
 				alertMsg: ''
 			});
-		}
 
-		console.warn('Os dados foram:', this.state);
+			Actions.submitForm(this.state);
+		}
 	}
 
 	render() {
