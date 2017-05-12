@@ -3,8 +3,10 @@ import React from 'react';
 
 import {
   BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
+  Route,
+  createBrowserHistory,
+  Switch
+} from 'react-router-dom';
 
 // Components
 import App from '../views/app/App';
@@ -14,8 +16,8 @@ import NotFound from '../views/notfound/NotFound';
 class Routes extends React.Component {
 	render() {
 		return(
-			<Router>
-		  	<div>
+			<Router history={createBrowserHistory}>
+		  	<Switch>
 			    <Route
 			        exact
 			        component={App}
@@ -27,9 +29,8 @@ class Routes extends React.Component {
 			    />
 			    <Route
 			        component={NotFound}
-			        path="*"
 			    />
-		  	</div>
+		  	</Switch>
 			</Router>
 		);
 	}
