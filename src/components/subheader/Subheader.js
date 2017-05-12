@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // Assets
-import '../../css/Subheader.css';
+import '../../assets/css/Subheader.css';
 
 class Subheader extends Component {
 	render() {

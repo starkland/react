@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Assets
 const reactLogo = 'http://reactjs.cn/react/img/logo.svg';
-import '../../css/Header.css';
+import '../../assets/css/Header.css';
 
 
 class Header extends React.Component {

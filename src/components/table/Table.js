@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // Assets
-import '../../css/Table.css';
+import '../../assets/css/Table.css';
 
 class Table extends Component {
 	render() {

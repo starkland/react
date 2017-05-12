@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 // Components
-import App from '../components/App';
+import App from '../views/app/App';
 import Form from '../components/form/Form';
 import NotFound from '../views/notfound/NotFound';
 

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // Assets
-import '../../css/Footer.css';
+import '../../assets/css/Footer.css';
 
 class Footer extends Component {
 	render() {

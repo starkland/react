@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // Assets
-import '../../css/Alert.css';
+import '../../assets/css/Alert.css';
 
 class Alert extends Component {
 	render() {
