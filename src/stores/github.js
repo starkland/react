@@ -4,42 +4,41 @@ import { EventEmitter } from 'events';
 // Assets
 import AppDispatcher from '../dispatcher';
 
-let _formObj = {};
+let _userObj = {};
 
 function _addItem(obj) {
-	return _formObj = obj;
+	return _userObj = obj;
 }
-
 
 // ====
 
-class StoreFactory extends EventEmitter {
-	getFormData() {
-		return _formObj;
+class GithubStoreFactory extends EventEmitter {
+	getData() {
+		return _userObj;
 	}
 
 	emitChange() {
-		this.emit('change');
+		this.emit('github');
 	}
 
 	addChangeListener(callback) {
-		this.on('change', callback);
+		this.on('github', callback);
 	}
 
 	removeChangeListener(callback) {
-		this.removeListener('change', callback);
+		this.removeListener('github', callback);
 	}
 };
 
 // ====
 
-let AppStore = new StoreFactory();
+let AppStore = new GithubStoreFactory();
 
 AppDispatcher.register(function(payload) {
 	let action = payload.action;
 
 	switch(action.actionType) {
-		case 'SUBMIT_FORM':
+		case 'GITHUB':
 			_addItem(action.data);
 		break;
 
