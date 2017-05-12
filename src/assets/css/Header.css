@@ -1,0 +1,13 @@
+.dark {
+	background-color: #363636;
+}
+
+.nav a:hover {
+	color: #FFFFFF;
+}
+
+.nav-right a:hover,
+.nav a.is-active {
+	background-color: #FFFFFF !important;
+	color: #363636 !important;
+}

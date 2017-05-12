@@ -2,13 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Components
-import App from './components/App';
-
 // Assets
-import './css/index.css';
+import './assets/css/index.css';
+
+// Routes
+import Routes from './routes';
 
 ReactDOM.render(
-  <App />,
+  <Routes />,
   document.getElementById('root')
 );

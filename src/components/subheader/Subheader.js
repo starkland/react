@@ -1,9 +1,6 @@
 // React
 import React, { Component } from 'react';
 
-// Assets
-import '../../css/Subheader.css';
-
 class Subheader extends Component {
 	render() {
 		return(

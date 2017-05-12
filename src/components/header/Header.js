@@ -1,9 +1,10 @@
 // React
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // Assets
 const reactLogo = 'http://reactjs.cn/react/img/logo.svg';
-import '../../css/Header.css';
+import '../../assets/css/Header.css';
 
 
 class Header extends React.Component {
@@ -52,7 +53,12 @@ class Header extends React.Component {
 
 				<div
 					className={`nav-right nav-menu ${this.state.isActive ? 'is-active': ''}`}>
-					<a className="nav-item">Home</a>
+					<NavLink
+						className="nav-item"
+						// activeClassName="is-active"
+						to="/">
+						Home
+					</NavLink>
 				</div>
 			</nav>
 		);

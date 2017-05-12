@@ -2,15 +2,15 @@
 import React, { Component } from 'react';
 
 // Components
-import Header from './header/Header';
-import Subheader from './subheader/Subheader';
-import Form from './form/Form';
-import Footer from './footer/Footer';
-import Table from './table/Table';
+import Header from '../../components/header/Header';
+import Subheader from '../../components/subheader/Subheader';
+import Form from '../../components/form/Form';
+import Footer from '../../components/footer/Footer';
+import Table from '../../components/table/Table';
 
 // Assets
-import '../css/App.css';
-import Store from '../stores';
+import '../../assets/css/App.css';
+import Store from '../../stores';
 
 class App extends Component {
 	constructor(props) {
