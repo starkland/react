@@ -3,8 +3,7 @@ import React from 'react';
 
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 
 // Components
@@ -12,10 +11,6 @@ import App from '../components/App';
 import Form from '../components/form/Form';
 
 class Routes extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return(
 			<Router>
