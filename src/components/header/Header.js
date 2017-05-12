@@ -55,16 +55,9 @@ class Header extends React.Component {
 					className={`nav-right nav-menu ${this.state.isActive ? 'is-active': ''}`}>
 					<NavLink
 						className="nav-item"
-						activeClassName="is-active"
+						// activeClassName="is-active"
 						to="/">
 						Home
-					</NavLink>
-
-					<NavLink
-						className="nav-item"
-						activeClassName="is-active"
-						to="about">
-						About
 					</NavLink>
 				</div>
 			</nav>

@@ -11,6 +11,7 @@ import {
 // Components
 import App from '../views/app/App';
 import Form from '../components/form/Form';
+import User from '../views/user/User';
 import NotFound from '../views/notfound/NotFound';
 
 class Routes extends React.Component {
@@ -26,6 +27,10 @@ class Routes extends React.Component {
 			    <Route
 			        component={Form}
 			        path="/about"
+			    />
+			    <Route
+			        component={User}
+			        path="/user/:username"
 			    />
 			    <Route
 			        component={NotFound}
