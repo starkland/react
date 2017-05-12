@@ -2,40 +2,37 @@
 import React from 'react';
 
 import {
-	BrowserRouter as Router,
-	Route,
-	Link
-} from 'react-router-dom';
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
+// Components
+import App from '../components/App';
+import Form from '../components/form/Form';
 
-const Home = () => (
-  <div>
-    <h2>Home PAGE</h2>
-  </div>
-);
+class Routes extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 
-const About = () => (
-  <div>
-    <h2>About PAGE</h2>
-  </div>
-);
+	render() {
+		return(
+			<Router>
+		  	<div>
+			    <Route
+			        component={App}
+			        path="/"
+			    />
+			    <Route
+			        component={Form}
+			        path="/about"
+			    />
+		  	</div>
+			</Router>
+		);
+	}
+}
 
-const AppRoutes = () => (
-	<Router>
-		<div>
-			<ul>
-				<li><Link to="/">Home</Link></li>
-				<li><Link to="/about">About</Link></li>
-			</ul>
+export default Routes;
 
-			<hr />
-
-			<Route exact path="/" component={Home} />
-			<Route path="/about" component={About} />
-		</div>
-	</Router>
-);
-
-export default AppRoutes;
-
-// https://imasters.com.br/front-end/javascript/gerenciando-rotas-com-react-router/
