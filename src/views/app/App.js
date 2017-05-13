@@ -70,7 +70,10 @@ class App extends Component {
 	      <div className="container">
 	      	<Form />
 
-	      	<Table type="users" />
+	      	<Table
+	      		type={this.state.formulario.select}
+	      		data={this.state.githubData.items}
+	      		/>
 	      </div>
 
 	      <Footer />

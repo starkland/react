@@ -5,7 +5,69 @@ import React, { Component } from 'react';
 import '../../assets/css/Table.css';
 
 class Table extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			info: ''
+		}
+}
+
+	componentDidMount() {
+		let props = this.props;
+
+
+		if (props.title && props.data) {
+			console.warn(props);
+
+			props.map((item) => {
+				this.setState({
+					info: {
+						html_url: item.html_url
+					}
+				})
+			})
+		}
+	}
+
+	getInitialState() {
+		return {
+			items: []
+		}
+	}
+
 	render() {
+
+		let props = this.props;
+		let listItems;
+
+		if (props.data) {
+			listItems = props.data.map((item, index) => {
+				return(
+					<tr key={index}>
+						<td>
+							<img
+								className="image"
+								// src={item.data}
+								alt="dale" />
+						</td>
+
+						<td>
+							<a href={item.html_url}>{item.name}</a>
+						</td>
+
+						<td>34.977036</td>
+
+						<td>
+							<button className="button is-info">
+								Info
+							</button>
+						</td>
+					</tr>
+				);
+			});
+		}
+
 		return(
 			<table className="table">
 				<thead>
@@ -18,26 +80,7 @@ class Table extends Component {
 				</thead>
 
 				<tbody>
-					<tr>
-						<td>
-							<img
-								className="image"
-								src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image"
-								alt="dale" />
-						</td>
-
-						<td>
-							<a href="">thulioph</a>
-						</td>
-
-						<td>34.977036</td>
-
-						<td>
-							<button className="button is-info">
-								Info
-							</button>
-						</td>
-					</tr>
+					{listItems}
 				</tbody>
 			</table>
 		);
