@@ -4,36 +4,21 @@ import React, { Component } from 'react';
 // Assets
 import '../../assets/css/Table.css';
 
+// ====
+
 class Table extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			info: ''
-		}
-}
+		};
 
-	componentDidMount() {
-		let props = this.props;
-
-
-		if (props.title && props.data) {
-			console.warn(props);
-
-			props.map((item) => {
-				this.setState({
-					info: {
-						html_url: item.html_url
-					}
-				})
-			})
-		}
+		this.viewMore = this._viewMore;
 	}
 
-	getInitialState() {
-		return {
-			items: []
-		}
+	_viewMore() {
+		console.warn('Bind');
 	}
 
 	render() {
@@ -48,18 +33,20 @@ class Table extends Component {
 						<td>
 							<img
 								className="image"
-								// src={item.data}
-								alt="dale" />
+								src={item.avatar_url}
+								alt={item.login} />
 						</td>
 
 						<td>
-							<a href={item.html_url}>{item.name}</a>
+							<a href={item.html_url} target='_blank'>{item.login}</a>
 						</td>
 
-						<td>34.977036</td>
+						<td>{item.score}</td>
 
 						<td>
-							<button className="button is-info">
+							<button
+								className="button is-info"
+								onClick={this.viewMore}>
 								Info
 							</button>
 						</td>

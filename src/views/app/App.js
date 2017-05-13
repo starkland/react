@@ -32,7 +32,7 @@ class App extends Component {
 	}
 
 	_handleChange() {
-		this._github.get(Store.getFormData());
+		this._github.getUser(Store.getFormData().input);
 
 		this.setState({
 			formulario: Store.getFormData()
@@ -40,12 +40,9 @@ class App extends Component {
 	}
 
 	_githubStore() {
-		// os dados do github estarão disponíveis aqui
 		this.setState({
 			githubData: GithubStore.getData()
 		});
-
-		console.warn('App:', this.state.githubData.items);
 	}
 
 	componentDidMount() {

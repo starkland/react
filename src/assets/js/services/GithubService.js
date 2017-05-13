@@ -22,18 +22,15 @@ class GithubService {
 		this.api_url = Config.API_URL;
 	}
 
-	get(obj) {
-		let { type = obj.select, input } = obj;
-		let searchUrl = `${this.api_url}/search/${type}?q=${input}`;
+	getUser(user) {
+		console.warn('getUser: ');
+
+		let searchUrl = `${this.api_url}/search/users?q=${user}`;
 
 		axios
 			.get(searchUrl)
 			.then((response) => _searchResponse(response))
 			.catch((err) => _searchError(err));
-	}
-
-	getUser() {
-		console.warn('getUser: ');
 	}
 
 	getRepoByUser() {
