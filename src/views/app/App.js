@@ -10,7 +10,7 @@ import Table from '../../components/table/Table';
 
 // Assets
 import '../../assets/css/App.css';
-import Store from '../../stores';
+import FormStore from '../../stores/form';
 import GithubStore from '../../stores/github';
 
 // Services
@@ -25,14 +25,14 @@ class App extends Component {
 			githubData: ''
 		};
 
-		this._handleChange = this._handleChange.bind(this);
+		this._handleSubmit = this._handleSubmit.bind(this);
 		this._githubStore = this._githubStore.bind(this);
 
 		this._github = new Github();
 	}
 
-	_handleChange() {
-		let data = Store.getFormData();
+	_handleSubmit() {
+		let data = FormStore.getFormData();
 
 		switch (data.select) {
 			case 'users':
@@ -48,7 +48,7 @@ class App extends Component {
 		}
 
 		this.setState({
-			formulario: Store.getFormData()
+			formulario: FormStore.getFormData()
 		});
 	}
 
@@ -59,12 +59,12 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		Store.addChangeListener(this._handleChange);
+		FormStore.addSubmitListener(this._handleSubmit);
 		GithubStore.addChangeListener(this._githubStore);
 	}
 
 	componentWillUnmount() {
-		Store.removeChangeListener(this._handleChange);
+		FormStore.removeSubmitListener(this._handleSubmit);
 		GithubStore.removeChangeListener(this._githubStore);
 	}
 

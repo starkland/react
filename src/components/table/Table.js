@@ -14,11 +14,11 @@ class Table extends Component {
 			info: ''
 		};
 
-		this.viewMore = this._viewMore;
+		this.viewMore = this._viewMore.bind(this);
 	}
 
 	_viewMore() {
-		console.warn('Bind', this.children);
+		console.warn('Bind', this);
 	}
 
 	render() {

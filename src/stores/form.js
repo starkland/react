@@ -10,30 +10,29 @@ function _addItem(obj) {
 	return _formObj = obj;
 }
 
-
 // ====
 
-class StoreFactory extends EventEmitter {
+class FormStoreFactory extends EventEmitter {
 	getFormData() {
 		return _formObj;
 	}
 
-	emitChange() {
-		this.emit('change');
+	emitSubmit() {
+		this.emit('submit');
 	}
 
-	addChangeListener(callback) {
-		this.on('change', callback);
+	addSubmitListener(callback) {
+		this.on('submit', callback);
 	}
 
-	removeChangeListener(callback) {
-		this.removeListener('change', callback);
+	removeSubmitListener(callback) {
+		this.removeListener('submit', callback);
 	}
 };
 
 // ====
 
-let AppStore = new StoreFactory();
+let AppStore = new FormStoreFactory();
 
 AppDispatcher.register(function(payload) {
 	let action = payload.action;
@@ -47,7 +46,7 @@ AppDispatcher.register(function(payload) {
 			return;
 	}
 
-	AppStore.emitChange();
+	AppStore.emitSubmit();
 });
 
 export default AppStore;
