@@ -15,59 +15,120 @@ class Table extends Component {
 		};
 
 		this.viewMore = this._viewMore.bind(this);
+
+		this.listHeader = null;
+		this.listItems = null;
 	}
 
 	_viewMore() {
 		console.warn('Bind', this);
 	}
 
-	render() {
+	_buildUsers(array, props) {
+		this.listHeader = array.map((item, index) => {
+			return(
+				<tr key={index}>
+					<th>{item}</th>
+				</tr>
+			);
+		});
 
+		this.listItems = props.data.map((item, index) => {
+			return(
+				<tr key={index}>
+					<td>
+						<img
+							className="image"
+							src={item.avatar_url}
+							alt={item.login} />
+					</td>
+
+					<td>
+						<a href={item.html_url} target='_blank'>{item.login}</a>
+					</td>
+
+					<td>{item.score}</td>
+
+					<td>
+						<button
+							className="button is-info"
+							onClick={this.viewMore}>
+							Info
+						</button>
+					</td>
+				</tr>
+			);
+		});
+	}
+
+	_buildRepos(array, props) {
+		this.listHeader = array.map((item, index) => {
+			return(
+				<tr key={index}>
+					<th>{item}</th>
+				</tr>
+			);
+		});
+
+		this.listItems = props.data.map((item, index) => {
+			return(
+				<tr key={index}>
+					<td>{item.name}</td>
+
+					<td>
+						<a href={item.html_url} target='_blank'>
+							{item.html_url}
+						</a>
+					</td>
+
+					<td>
+						<a href={item.owner.html_url} target='_blank'>
+							{item.owner.login}
+						</a>
+					</td>
+
+					<td>{item.language}</td>
+
+					<td>
+						<button
+							className="button is-info"
+							onClick={this.viewMore}>
+							Info
+						</button>
+					</td>
+				</tr>
+			);
+		});
+	}
+
+	render() {
 		let props = this.props;
-		let listItems;
 
 		if (props.data) {
-			listItems = props.data.map((item, index) => {
-				return(
-					<tr key={index}>
-						<td>
-							<img
-								className="image"
-								src={item.avatar_url}
-								alt={item.login} />
-						</td>
+			switch (props.type) {
+				case 'users':
+					let userHead = ['Image', 'Username', 'Score', ''];
+					this._buildUsers(userHead, props);
+				break;
 
-						<td>
-							<a href={item.html_url} target='_blank'>{item.login}</a>
-						</td>
+				case 'repositories':
+					let repoHead = ['Title', 'URL', 'User', 'Language', ''];
+					this._buildRepos(repoHead, props);
+				break;
 
-						<td>{item.score}</td>
-
-						<td>
-							<button
-								className="button is-info"
-								onClick={this.viewMore}>
-								Info
-							</button>
-						</td>
-					</tr>
-				);
-			});
+				default:
+					return;
+			}
 		}
 
 		return(
 			<table className="table">
 				<thead>
-					<tr>
-						<th>Image</th>
-						<th>Username</th>
-						<th>Score</th>
-						<th></th>
-					</tr>
+					{this.listHeader}
 				</thead>
 
 				<tbody>
-					{listItems}
+					{this.listItems}
 				</tbody>
 			</table>
 		);
