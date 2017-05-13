@@ -32,7 +32,20 @@ class App extends Component {
 	}
 
 	_handleChange() {
-		this._github.getUser(Store.getFormData().input);
+		let data = Store.getFormData();
+
+		switch (data.select) {
+			case 'users':
+				this._github.getUser(data.input);
+			break;
+
+			case 'repositories':
+				this._github.getRepo(data.input);
+			break;
+
+			default:
+				return;
+		}
 
 		this.setState({
 			formulario: Store.getFormData()

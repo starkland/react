@@ -7,7 +7,7 @@ import Actions from '../../../actions';
 // ====
 
 function _searchResponse(obj) {
-	// console.warn(obj.data)
+	console.warn(obj.data)
 	Actions.handleGithubData(obj.data);
 }
 
@@ -22,20 +22,27 @@ class GithubService {
 		this.api_url = Config.API_URL;
 	}
 
-	getUser(user) {
-		console.warn('getUser: ');
-
-		let searchUrl = `${this.api_url}/search/users?q=${user}`;
-
+	get(url) {
 		axios
-			.get(searchUrl)
+			.get(url)
 			.then((response) => _searchResponse(response))
 			.catch((err) => _searchError(err));
 	}
 
-	getRepoByUser() {
-		console.warn('getRepoByUser: ', this.user);
+	getUser(user) {
+		let searchUrl = `${this.api_url}/search/users?q=${user}`;
+		this.get(searchUrl);
 	}
+
+	getRepo(repo) {
+		let searchUrl = `${this.api_url}/search/repositories?q=${repo}`;
+		this.get(searchUrl);
+	}
+
+	// getRepoByUser(user) {
+	// 	let searchUrl = `${this.api_url}/search/users/${user}`;
+	// 	this.get(searchUrl);
+	// }
 }
 
 export default GithubService;

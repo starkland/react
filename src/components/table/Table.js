@@ -18,7 +18,7 @@ class Table extends Component {
 	}
 
 	_viewMore() {
-		console.warn('Bind');
+		console.warn('Bind', this.children);
 	}
 
 	render() {
