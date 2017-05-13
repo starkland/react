@@ -10,31 +10,62 @@ import Table from '../../components/table/Table';
 
 // Assets
 import '../../assets/css/App.css';
-import Store from '../../stores';
+import FormStore from '../../stores/form';
+import GithubStore from '../../stores/github';
+
+// Services
+import Github from '../../assets/js/services/GithubService';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			formulario: ''
+			formulario: '',
+			githubData: ''
 		};
 
-		this._handleChange = this._handleChange.bind(this);
+		this._handleSubmit = this._handleSubmit.bind(this);
+		this._githubStore = this._githubStore.bind(this);
+
+		this._github = new Github();
 	}
 
-	_handleChange() {
+	_handleSubmit() {
+		let data = FormStore.getFormData();
+
+		switch (data.select) {
+			case 'users':
+				this._github.getUser(data.input);
+			break;
+
+			case 'repositories':
+				this._github.getRepo(data.input);
+			break;
+
+			default:
+				return;
+		}
+
 		this.setState({
-			formulario: Store.getFormData()
+			formulario: FormStore.getFormData()
+		});
+	}
+
+	_githubStore() {
+		this.setState({
+			githubData: GithubStore.getData()
 		});
 	}
 
 	componentDidMount() {
-		Store.addChangeListener(this._handleChange);
+		FormStore.addSubmitListener(this._handleSubmit);
+		GithubStore.addChangeListener(this._githubStore);
 	}
 
 	componentWillUnmount() {
-		Store.removeChangeListener(this._handleChange);
+		FormStore.removeSubmitListener(this._handleSubmit);
+		GithubStore.removeChangeListener(this._githubStore);
 	}
 
   render() {
@@ -46,12 +77,13 @@ class App extends Component {
 
 	      <Subheader title="Home" subtitle={subtitle} />
 
-	      {this.state.formulario.input}
-
 	      <div className="container">
 	      	<Form />
 
-	      	<Table type="users" />
+	      	<Table
+	      		type={this.state.formulario.select}
+	      		data={this.state.githubData.items}
+	      		/>
 	      </div>
 
 	      <Footer />

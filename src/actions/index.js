@@ -8,6 +8,13 @@ let Actions = {
 			actionType: 'SUBMIT_FORM',
 			data: dataObj
 		});
+	},
+
+	handleGithubData(dataObj) {
+		AppDispatcher.handleViewAction({
+			actionType: 'GITHUB',
+			data: dataObj
+		})
 	}
 
 };
