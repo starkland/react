@@ -12,4 +12,10 @@ Start the application:
 $ npm start
 ```
 
+Running the tests:
+
+```bash
+$ npm test
+```
+
 [MIT License](https://thulioph.mit-license.org) © Thulio Philipe
