@@ -1,9 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 
-import Subheader from './Subheader';
+import Component from './Subheader';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Subheader />, div);
+test('Testando o componente de Subheader', () => {
+	const props = {
+		title: 'YO!',
+		subtitle: 'this is my header'
+	};
+
+	const subheader = shallow(
+		<Component
+			title={props.title}
+			subtitle={props.subtitle}
+		/>
+	);
+
+	const text = 'YO!this is my header';
+
+	expect(subheader.text()).toEqual(text);
 });
