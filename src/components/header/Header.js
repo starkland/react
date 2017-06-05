@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Assets
-const reactLogo = 'http://reactjs.cn/react/img/logo.svg';
+const reactLogo = 'https://facebook.github.io/react/img/logo.svg';
 import '../../assets/css/Header.css';
 
 
