@@ -14,7 +14,7 @@ test('Testando o componente de Alerta', () => {
 		<Component message={props.message} />
 	);
 
-	console.warn(alert.text());
+	const text = 'YO!';
 
-	// expect(alert.text()).toBe(text);
+	expect(alert.text()).toBe(text);
 });
