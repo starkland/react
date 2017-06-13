@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Header from './Header';
+import { shallow } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Header />, div);
+import Component from './Header';
+
+test('Testando o component de Header', () => {
+	const header = shallow(
+		<Component />
+	);
+
+	header.find('.nav-toggle').simulate('click');
+
+	expect(header.state().isActive).toBe(true);
 });
