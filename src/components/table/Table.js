@@ -62,9 +62,7 @@ class Table extends Component {
 	_buildRepos(array, props) {
 		this.listHeader = array.map((item, index) => {
 			return(
-				<tr key={index}>
-					<th>{item}</th>
-				</tr>
+				<th key={index}>{item}</th>
 			);
 		});
 
@@ -122,9 +120,7 @@ class Table extends Component {
 		return(
 			<table className="table">
 				<thead>
-					<tr>
-						{this.listHeader}
-					</tr>
+					<tr>{this.listHeader}</tr>
 				</thead>
 
 				<tbody>
