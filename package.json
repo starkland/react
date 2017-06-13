@@ -29,6 +29,14 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](docs|node_modules)[/\\\\]"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss|less)$": "<rootDir>/tests/styleMock.js"
+    },
+    "testEnvironment": "node",
+    "testURL": "http://localhost:3000"
   }
 }
