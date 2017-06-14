@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-
 import Component from './Table';
 
 test('Deve ter o state inicial como string vazia.', () => {
@@ -36,7 +35,7 @@ test('Deve ter 4 colunas no thead da tabela de usuários.', () => {
 		}]
 	};
 
-	const table = mount(
+	const table = shallow(
 		<Component type={props.type} data={props.data} />
 	);
 
@@ -138,7 +137,7 @@ test('Deve ter 4 colunas no thead da tabela de repositories.', () => {
 		}]
 	};
 
-	const table = mount(
+	const table = shallow(
 		<Component type={props.type} data={props.data} />
 	);
 
@@ -170,12 +169,12 @@ test('A tabela de users deve ter as props setadas corretamente.', () => {
 		}]
 	};
 
-	const userTable = mount(
+	const userTable = shallow(
 		<Component type={userProps.type} data={userProps.data} />
 	);
 
-	expect(userTable.getNode().props.type).toBe(userProps.type);
-	expect(userTable.getNode().props.data).toBe(userProps.data);
+	expect(userTable.instance().props.type).toBe(userProps.type);
+	expect(userTable.instance().props.data).toBe(userProps.data);
 });
 
 test('A tabela de repositories deve ter as props setadas corretamente.', () => {
@@ -273,10 +272,9 @@ test('A tabela de repositories deve ter as props setadas corretamente.', () => {
 		}]
 	};
 
-	const repoTable = mount(
+	const repoTable = shallow(
 		<Component type={repoProps.type} data={repoProps.data} />
 	);
 
-	expect(repoTable.getNode().props.type).toBe(repoProps.type);
-	expect(repoTable.getNode().props.data).toBe(repoProps.data);
+	expect(repoTable.instance().props.type).toBe(repoProps.type); expect(repoTable.instance().props.data).toBe(repoProps.data);
 });

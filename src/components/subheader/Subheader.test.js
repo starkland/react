@@ -10,10 +10,7 @@ test('Testando o componente de Subheader', () => {
 	};
 
 	const subheader = shallow(
-		<Component
-			title={props.title}
-			subtitle={props.subtitle}
-		/>
+		<Component title={props.title} subtitle={props.subtitle} />
 	);
 
 	const text = 'YO!this is my header';
