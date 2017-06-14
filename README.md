@@ -1,5 +1,7 @@
 ## How to use
 
+[![Build Status](https://travis-ci.org/starkland/react.svg?branch=master)](https://travis-ci.org/starkland/react)
+
 Install dependencies:
 
 ```bash
