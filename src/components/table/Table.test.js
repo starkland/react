@@ -276,5 +276,6 @@ test('A tabela de repositories deve ter as props setadas corretamente.', () => {
 		<Component type={repoProps.type} data={repoProps.data} />
 	);
 
-	expect(repoTable.instance().props.type).toBe(repoProps.type); expect(repoTable.instance().props.data).toBe(repoProps.data);
+	expect(repoTable.instance().props.type).toBe(repoProps.type);
+	expect(repoTable.instance().props.data).toBe(repoProps.data);
 });
