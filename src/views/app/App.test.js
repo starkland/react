@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import Component from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+test('Testando o component APP', () => {
+	const app = shallow(
+		<Component />
+	);
+
+	console.warn(app);
 });
