@@ -16,5 +16,12 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <script src="https://cdn.ravenjs.com/3.16.0/raven.min.js"
+    crossorigin="anonymous"></script>
+
+    <script>
+      Raven.config('https://2dd93bd47b914c96adced1865199b210@sentry.io/180180').install();
+    </script>
   </body>
 </html>
