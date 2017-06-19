@@ -9,9 +9,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
-  },
-  "devDependencies": {
+    "react-router-dom": "^4.1.1",
     "babel-jest": "^20.0.3",
     "babel-plugin-jest-hoist": "^20.0.3",
     "babel-polyfill": "^6.23.0",
