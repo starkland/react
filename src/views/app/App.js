@@ -17,6 +17,11 @@ import GithubStore from '../../stores/github';
 import Github from '../../assets/js/services/GithubService';
 
 class App extends Component {
+	state: {
+    formulario: string,
+    githubData: string,
+  };
+
 	constructor(props) {
 		super(props);
 
